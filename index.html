@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Qr Code Generator</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="bg-red-500 py-3 text-white">
+        <h2 class="text-center">QR GENERATOR</h2>
+      </div>
+    </header>
+    <main class="my-20">
+      <div class="border border-gray-400 lg:w-[25%] w-[60%] m-auto p-5 rounded-md">
+        <p class="font-semibold">Enter your url below to generate a qr code and save the image</p>
+        <form class="flex flex-col gap-y-10 mt-4" id="url-form">
+          <input type="text" name="url" id="url" class="border border-black rounded-md p-1 w-full" placeholder="Enter a url" />
+          <button type="submit" class="bg-gray-200 p-2 rounded-md bg-red-500 text-xl text-white">Generate QR</button>
+        </form>
+        <div class="mt-10 w-1/2 m-auto generated space-y-6">
+          <p id="qrcode" class="auto mb-5"></p>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</html>
